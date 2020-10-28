@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>DASHBOARD</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+  <!--[ HEADER ]-->
+  <!--[ END HEADER ]-->
+  <!--[ SIDEBAR MENU ]-->
+  <div class="container">
+    <div class="row p-0">
+      <div class="col-3 p-0 bg-dark">
+        <button class="btn btn-dark shadow-none rounded-0 btn-block text-left" type="button" data-toggle="collapse" data-type="menuleft" data-target="#collapseMenuDropdown0" aria-expanded="true">
+          <div class="row">
+            <div class="col-auto"><i class="fa fa-home" aria-hidden="false"></i></div>
+            <div class="col p-0 font-weight-bolder">Home</div>
+            <div class="col-auto"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+          </div>
+        </button>
+        <div class="collapse show" id="collapseMenuDropdown0">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 1</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 2</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 3</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 4</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 5</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 6</a></li>
+          </ul>
+        </div>
+
+        <button class="btn btn-dark shadow-none rounded-0 btn-block text-left" type="button" data-toggle="collapse" data-type="menuleft" data-target="#collapseMenuDropdown1" aria-expanded="false">
+          <strong>Dropdown 2</strong>
+        </button>
+        <div class="collapse" id="collapseMenuDropdown1">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 1</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 2</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 3</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 4</a></li>
+          </ul>
+        </div>
+
+        <button class="btn btn-dark shadow-none rounded-0 btn-block text-left" type="button" data-toggle="collapse" data-type="menuleft" data-target="#collapseMenuDropdown11" aria-expanded="false">
+          <strong>Dropdown 3</strong>
+        </button>
+        <div class="collapse" id="collapseMenuDropdown11">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 1</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 2</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 3</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 4</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 5</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 6</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 7</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 8</a></li>
+            <li class="nav-item"><a class="btn btn-dark shadow-none rounded-0 btn-block text-left" href="javascript:void(0)">Menu 9</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[ END SIDEBAR MENU ]-->
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    setInterval(function() {
+      //location.reload();
+    }, 3000);
+
+    $(document).ready(function() {
+      var menuleft = [];
+      for (var i = 0; $($('[data-type=menuleft]')[i]).attr('data-target') != undefined ; i++) {
+        menuleft.push($($('[data-type=menuleft]')[i]).attr('data-target'));
+      }
+
+      // ====
+      $('[data-type=menuleft]').click(function() {
+        var numOfMenuLeft = null;
+        for (var i = 0; i < menuleft.length; i++) {
+          if (menuleft[i] == $(this).attr('data-target')) {
+            $(menuleft[i]).collapse('show');
+            $('[data-target=\'' + menuleft[i] + '\']>div>div:nth-child(3)>.fa').removeClass('fa-angle-right').addClass('fa-angle-down');
+          } else {
+            $(menuleft[i]).collapse('hide');
+            $('[data-target=\'' + menuleft[i] + '\']>div>div:nth-child(3)>.fa').removeClass('fa-angle-down').addClass('fa-angle-right');
+          }
+        }
+      });
+
+      // ====
+      $('.collapse>ul>li>a').click(function() {
+        for (var i = 0; i < menuleft.length; i++) {
+          $(menuleft[i] + '>ul>li>a.active').removeClass('active');
+        }
+        $(this).addClass('active');
+      });
+    });
+  </script>
+</body>
+</html>

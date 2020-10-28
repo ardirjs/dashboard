@@ -1,0 +1,33 @@
+{
+  "name": "dashboard",
+  "homepage": "https://github.com/ardirjs/dashboard",
+  "authors": [
+    "ardirjs <47668013+ardirjs@users.noreply.github.com>"
+  ],
+  "description": "dashboard for admin web or project iot embedded system",
+  "main": "index.html",
+  "keywords": [
+    "dashboard",
+    "admin",
+    "embedded",
+    "system",
+    "iot"
+  ],
+  "license": "MIT License",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "firebase": "^8.0.0",
+    "font-awesome": "fontawesome#4",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
+    "popper.js": "^2.5.3"
+  }
+}
